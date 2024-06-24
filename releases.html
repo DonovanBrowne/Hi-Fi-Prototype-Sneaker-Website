@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>LDN Sneakers - Releases</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md bg-black navbar-dark py-3">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">LDN SNEAKERS</a>
+
+          <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navmenu"
+          >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto" >
+                <li class="nav-item">
+                    <a href="#stores" class="nav-link">STORES</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#events" class="nav-link">EVENTS</a>
+                </li>
+                <li class="nav-item">
+                    <a id = "profile-button" href="profile.html" class="nav-link">PROFILE</a>
+                </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 class="title">UPCOMING RELEASES</h1>
+        <body class="subheading">
+            Stay one step ahead of the latest drops in London to level up your sneaker game 🔥
+        </body>
+    </div>
+    
+    <div class="carousel-container">
+        <div id="carouselExampleControls" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card">
+                        <div class="img-wrapper">
+                            <img class="card-img-top" src="img/Jordan 4 Bred.jpg" alt="Jordan 4 sneaker image">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Jordan 4 Retro Bred</h5>
+                            <p class="card-price">£230</p>
+                            <p class="card-info">Release date:</p>
+                            <p id="releaseDate" class="card-date">08/06/24</p>
+                            <button class="watch-list-button" id="watchlistButton" onclick="toggleHeart(this)">Add to Watchlist <i id="heartIcon" class="far fa-heart"></i></button>
+                        </div>
+                </div>
+                </div>
+                <div class="carousel-item">
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img class="card-img-top" src="img/Yeezy 700 Wave Runner.jpg" alt="Yeezy 700 sneaker image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Yeezy 700 Wave Runner</h5>
+                        <p class="card-price">£350</p>
+                        <p class="card-info">Release date:</p>
+                        <p id="releaseDate" class="card-date">19/06/24</p>
+                        <button class="watch-list-button" id="watchlistButton" onclick="toggleHeart(this)">Add to Watchlist <i id="heartIcon" class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img class="card-img-top" src="img/Jordan 1 UNC.jpg" alt="Jordan 1 sneaker image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Jordan 1 High UNC</h5>
+                        <p class="card-price">£200</p>
+                        <p class="card-info">Release date:</p>
+                        <p id="releaseDate" class="card-date">24/07/24</p>
+                        <button class="watch-list-button" id="watchlistButton" onclick="toggleHeart(this)">Add to Watchlist <i id="heartIcon" class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper">
+                            <img class="card-img-top" src="img/Balenciaga Track.jpg" alt="Balenciaga sneaker image">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Balenciaga Track</h5>
+                            <p class="card-price">£700</p>
+                            <p class="card-info">Release date:</p>
+                            <p id="releaseDate" class="card-date">01/08/24</p>
+                            <button class="watch-list-button" id="watchlistButton" onclick="toggleHeart(this)">Add to Watchlist <i id="heartIcon" class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <div class="img-wrapper">
+                            <img class="card-img-top" src="img/New Balance 550.jpg" alt="Mew Balance sneaker image">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">New Balance 550</h5>
+                            <p class="card-price">£100</p>
+                            <p class="card-info">Release date:</p>
+                            <p id="releaseDate" class="card-date">15/09/24</p>
+                            <button class="watch-list-button" id="watchlistButton" onclick="toggleHeart(this)">Add to Watchlist <i id="heartIcon" class="far fa-heart"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+            </a>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add event listener to the sign out button
+            document.getElementById('signOutButton').addEventListener('click', function() {
+                // Change localStorage item to false
+                localStorage.setItem('isLoggedIn', 'false');
+                // Redirect to index.html
+                window.location.href = 'index.html';
+            });
+        });
+
+            document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in
+            var isLoggedIn = localStorage.getItem('isLoggedIn');
+
+            if (isLoggedIn === 'false') {
+                // Remove the Sign Up button
+                var element = document.getElementById("profile-button")
+                element.remove();
+            }
+        });
+
+        function toggleHeart(button) {
+            var heartIcon = button.children[0];
+            var cardBody = button.closest('.card-body');
+            var cardTitle = cardBody.querySelector('.card-title').textContent;
+            var cardPrice = cardBody.querySelector('.card-price').textContent; 
+            var cardReleaseDate = cardBody.querySelector('.card-date').textContent;
+            
+            // Check if the item is already in the watchlist
+            var watchlist = JSON.parse(localStorage.getItem('watchlist')) || {};
+            
+            if (heartIcon.classList.contains("far")) {
+                heartIcon.classList.remove("far");
+                heartIcon.classList.add("fas");
+                watchlist[cardTitle] = { price: cardPrice, releaseDate: cardReleaseDate }; // Add to watchlist
+            } else {
+                heartIcon.classList.remove("fas");
+                heartIcon.classList.add("far");
+                delete watchlist[cardTitle]; // Remove from watchlist
+            }
+    
+            // Update the watchlist in localStorage
+            localStorage.setItem('watchlist', JSON.stringify(watchlist));
+            updateWatchlistTable();
+}
+
+        // Function to initialize the state of the watchlist buttons on page load
+        function initializeWatchlistState() {
+            var watchlist = JSON.parse(localStorage.getItem('watchlist')) || {};
+            document.querySelectorAll('#watchlistButton').forEach(button => {
+                var cardTitle = button.closest('.card-body').querySelector('.card-title').textContent;
+                var heartIcon = button.children[0];
+                
+                // Set the button state based on the watchlist
+                if (watchlist[cardTitle]) {
+                    heartIcon.classList.remove("far");
+                    heartIcon.classList.add("fas");
+                } else {
+                    heartIcon.classList.remove("fas");
+                    heartIcon.classList.add("far");
+                }
+        });
+}
+
+        function updateWatchlistTable() {
+            var watchlist = JSON.parse(localStorage.getItem('watchlist')) || {};
+            var tableBody = document.querySelector('.table.table-striped tbody');
+            tableBody.innerHTML = ''; // Clear the table
+
+            // Add rows to the table for each item in the watchlist
+            for (var title in watchlist) {
+                var row = tableBody.insertRow();
+                var cellName = row.insertCell(0);
+                var cellPrice = row.insertCell(1);
+                var cellReleaseDate = row.insertCell(2);
+                var cellDaysTillRelease = row.insertCell(3);
+
+                cellName.textContent = title;
+                cellPrice.textContent = watchlist[title].price;
+                cellReleaseDate.textContent = watchlist[title].releaseDate;
+                
+            }
+        }
+
+        // Call the updateWatchlistTable function on page load to initialize the table
+        document.addEventListener('DOMContentLoaded', updateWatchlistTable);
+
+        // Call the initialize function on page load
+        document.addEventListener('DOMContentLoaded', initializeWatchlistState);
+
+    
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+.navbar-brand{
+    color: #FFF;
+    font-family: Saira;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 800;
+    line-height: 90%;
+    position: relative; 
+    z-index: 1;
+    }
+
+.navbar-brand::before {
+    content: '';
+    background-color: #CB0707;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px; 
+    height: 100%;
+    border-radius: 5px;
+    z-index: -1;
+    
+}
+.nav-item{
+    color: #FFF;
+    font-family: "Saira Condensed";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90%;
+}
+
+body {
+    background-color: #F4F5F5;
+}
+
+h1{
+    color: #FFF;
+    font-family:"Saira Condensed", sans-serif;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90%; 
+}
+
+.btn{
+    color: #FFF;
+    font-family:"Saira Condensed", sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90%; 
+
+}
+
+.title{
+    color: #000000;
+    font-family: "Saira Condensed";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90%;
+}
+
+.subheading{
+    font-size: 20px;
+}
+
+@media screen and (min-width:768px) {
+    .carousel-inner{
+        display: flex;
+    }
+
+    .carousel-item{
+        display: block;
+        margin-right:0;
+        flex: 0 0 calc (100%/3);
+
+    }
+    
+}
+
+
+/* CSS Media query for screen sizes above medium (768px) */
+@media (min-width: 768px) {
+    .carousel-control-prev, .carousel-control-next {
+        display: none;
+    }
+}
+
+
+.carousel-inner{
+    padding: 1.5em;
+}
+
+.card{
+    margin:0 0.5em;
+}
+
+.card-info{
+    font-weight: 600;
+    line-height: 90%;
+}
+
+.card-price{
+    font-weight: 600;
+    line-height: 90%;
+}
+
+.card-date{
+    line-height: 90%;
+}
+
+.img-wrapper{
+    max-width: 100%;
+}
+
+.watch-list-button{
+    border-radius: 5px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%);
+}
+
+.card-body .icons {
+    fill: #FFFFFF;
+}
+
+.icon-title{
+    color: #FFF;
+    font-family: "Saira Condensed";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90%;
+}
+
+.card {
+    height: 100%;
+  }
+
+.icons {
+    width: 50%; /* Reducing the size by 25% */
+    margin: 0 auto;
+  }
+
+
+.text-body{
+    color: #FFF;
+}

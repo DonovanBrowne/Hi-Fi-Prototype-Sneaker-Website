@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>LDN Sneakers - Sign Up</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm bg-black navbar-dark py-3">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">LDN SNEAKERS</a>
+        </div>
+    </nav>
+
+    <!-- Sign Up Form -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2 id="signupHeading" class="mb-4">Join the community!</h2>
+                <form id="signupForm" class="g-3 needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                        title="Please enter a valid email address.">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" required>
+                    </div>
+                    <div class="d-grid gap-2 mb-3">
+                        <button href="index.html" id="signupButton" class="btn btn-primary" type="submit">SIGN UP</button>
+                    </div>
+                    <p class="text-center">Already have a LDN Sneakers account? <a href="#" onclick="toggleForms()">Sign in</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+   <!-- Sign In Form (initially hidden) -->
+   <div id="signinForm" class="container mt-5" style="display: none;">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h2 id="signinHeading" class="mb-4" style="display: none;">Welcome back!</h2>
+            <form class="g-3 needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="emailSignIn" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="emailSignIn" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                    title="Please enter a valid email address.">
+                </div>
+                <div class="mb-3">
+                    <label for="passwordSignIn" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="passwordSignIn" required>
+                </div>
+                <div class="d-grid gap-2 mb-3">
+                    <button href="index.html" id="signinButton" class="btn btn-primary" type="submit">SIGN IN</button>
+                </div>
+                <p class="text-center">Don't have an account? <a href="signup.html">Create account</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+    // Function to check if the sign up form fields are empty
+    function checkSignUpFields(form) {
+        var nameInput = form.querySelector('input[type="text"]');
+        var emailInput = form.querySelector('input[type="email"]');
+        var passwordInput = form.querySelector('input[type="password"]');
+    
+        if (nameInput.value.trim() === "") {
+            alert('Please fill out the Name field.');
+            nameInput.focus(); // Focus on the empty input field
+            return false;
+        }
+    
+        if (emailInput.value.trim() === "") {
+            alert('Please fill out the Email field.');
+            emailInput.focus(); // Focus on the empty input field
+            return false;
+        }  
+            else if (!validateEmail(emailInput.value.trim())) {
+                alert('Please enter a valid email address.');
+                emailInput.focus();
+                return false;
+    }
+    
+        if (passwordInput.value.trim() === "") {
+            alert('Please fill out the Password field.');
+            passwordInput.focus(); // Focus on the empty input field
+            return false;
+        }
+        return true;
+}
+
+
+    // Function to check if the sign in form fields are empty
+    function checkSignInFields(form) {
+        var emailInput = form.querySelector('#emailSignIn');
+        var passwordInput = form.querySelector('#passwordSignIn');
+
+        if (emailInput.value.trim() === "") {
+            alert('Please fill out the Email field.');
+            emailInput.focus(); // Focus on the empty input field
+            return false;
+        } else if (!validateEmail(emailInput.value.trim())) {
+            alert('Please enter a valid email address.');
+            emailInput.focus();
+            return false;
+        }
+
+        if (passwordInput.value.trim() === "") {
+            alert('Please fill out the Password field.');
+            passwordInput.focus(); // Focus on the empty input field
+            return false;
+        }
+        return true;
+}
+
+    // Function to save user data to localStorage
+    function saveUserData(name, email, password) {
+        localStorage.setItem('name', name);
+        localStorage.setItem('email', email);
+        localStorage.setItem('password', password);
+}
+
+    // Function to validate user credentials
+    function validateCredentials(email, password) {
+        var storedEmail = localStorage.getItem('email');
+        var storedPassword = localStorage.getItem('password');
+        return email === storedEmail && password === storedPassword;
+}
+
+    // Event listener for the Sign Up button
+    document.getElementById('signupButton').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+        var signupForm = document.getElementById('signupForm');
+        if (checkSignUpFields(signupForm)) {
+            var name = signupForm.querySelector('#name').value;
+            var email = signupForm.querySelector('#email').value;
+            var password = signupForm.querySelector('#password').value;
+            saveUserData(name, email, password); // Save user data
+            localStorage.setItem('isLoggedIn', 'true');
+            window.location.href = 'index.html';
+        }
+});
+
+    // Event listener for the Sign In button
+    document.getElementById('signinButton').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the form from submitting
+        var signinForm = document.getElementById('signinForm');
+        if (checkSignInFields(signinForm)) {
+            var email = signinForm.querySelector('#emailSignIn').value;
+            var password = signinForm.querySelector('#passwordSignIn').value;
+            if (validateCredentials(email, password) || (email === 'email@email.com' && password === 'password')) {
+                localStorage.setItem('isLoggedIn', 'true');
+                window.location.href = 'index.html';
+            } else {
+                alert('Invalid credentials. Please try again.');
+            }
+        }
+    });
+
+    // JavaScript function to toggle between sign up and sign in forms
+    function toggleForms() {
+        var signupForm = document.getElementById('signupForm');
+        var signinForm = document.getElementById('signinForm');
+        var signupHeading = document.getElementById('signupHeading');
+        var signinHeading = document.getElementById('signinHeading');
+        
+        if (signupForm.style.display === 'none') {
+            signupForm.style.display = 'block';
+            signupHeading.style.display = 'block';
+            signinForm.style.display = 'none';
+            signinHeading.style.display = 'none';
+        } else {
+            signupForm.style.display = 'none';
+            signupHeading.style.display = 'none';
+            signinForm.style.display = 'block';
+            signinHeading.style.display = 'block';
+        }
+    }
+
+    // Function to validate email format
+    function validateEmail(email) {
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+}
+</script>
+</body>
+</html>
